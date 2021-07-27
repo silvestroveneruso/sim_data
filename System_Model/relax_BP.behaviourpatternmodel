@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pros:TaskModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pros="http://org/pros/BehaviourPatternModel.ecore">
+	<behaviourPatterns ID="relax_BP" name="relax_BP" enabled="true" 
+		priority="40" interrupt="20">
+	
+	
+		<refinements order="0" type="Temporal">
+		  <refinementTo xsi:type="pros:CompositeTask" ID="relax0" name="relax0" refinedFrom="//@behaviourPatterns.0/@refinements.1">
+			
+			<refinements order="0" type="moveevent">
+				<refinementTo xsi:type="pros:SystemTask" ID="go_computer" name="go_computer" refinedFrom="//@behaviourPatterns.0/@refinements.0" serviceName="go_computer" serviceMethodName="go_computer">
+				<contextPrecondition condition="Check_tiredness" operator="lower" explanation="Check_tiredness">
+					<leftPart instanceName="tiredness" propertyName="value"/>
+					<rightPart value="30"/>
+				</contextPrecondition>
+				</refinementTo>
+			</refinements>
+			
+			<refinements order="1" type="moveevent">
+				<refinementTo xsi:type="pros:SystemTask" ID="go_chair" name="go_chair" refinedFrom="//@behaviourPatterns.0/@refinements.0" serviceName="go_chair" serviceMethodName="go_chair">
+					<contextPrecondition condition="Check_tiredness" operator="greater" explanation="Check_tiredness">
+						<leftPart instanceName="tiredness" propertyName="value"/>
+						<rightPart value="30"/>
+					</contextPrecondition>
+				</refinementTo>
+			</refinements>
+			
+			</refinementTo>
+		</refinements>
+		
+		
+		<refinements order="1" type="Temporal">
+		  <refinementTo xsi:type="pros:CompositeTask" ID="relax1" name="relax1" refinedFrom="//@behaviourPatterns.0/@refinements.1">
+			
+			<refinements order="0" type="BottomEvent">
+				<refinementTo xsi:type="pros:SystemTask" ID="switch_computer_on" name="switch_computer_on" refinedFrom="//@behaviourPatterns.0/@refinements.0" serviceName="switch_computer_on" serviceMethodName="switch_computer_on">
+				<contextPrecondition condition="Check_tiredness" operator="lower" explanation="Check_tiredness">
+					<leftPart instanceName="tiredness" propertyName="value"/>
+					<rightPart value="30"/>
+				</contextPrecondition>
+				</refinementTo>
+			</refinements>
+			
+			<refinements order="1" type="BottomEvent">
+				<refinementTo xsi:type="pros:SystemTask" ID="rest_in_chair" name="rest_in_chair" refinedFrom="//@behaviourPatterns.0/@refinements.0" serviceName="rest_in_chair" serviceMethodName="rest_in_chair">
+					<contextPrecondition condition="Check_tiredness" operator="greater" explanation="Check_tiredness">
+						<leftPart instanceName="tiredness" propertyName="value"/>
+						<rightPart value="30"/>
+					</contextPrecondition>
+				</refinementTo>
+			</refinements>
+			
+			</refinementTo>
+		</refinements>
+		
+		
+		<refinements order="2" type="moveevent">
+			<refinementTo xsi:type="pros:SystemTask" ID="go_computer_chair" name="go_computer_chair" refinedFrom="//@behaviourPatterns.0/@refinements.1" serviceName="go_computer_chair" serviceMethodName="go_computer_chair">
+				<contextPrecondition condition="Check_tiredness" operator="lower" explanation="Check_tiredness">
+					<leftPart instanceName="tiredness" propertyName="value"/>
+					<rightPart value="30"/>
+				</contextPrecondition>
+			</refinementTo>
+		</refinements>	
+		
+		<refinements order="3" type="BottomEvent">
+			<refinementTo xsi:type="pros:SystemTask" ID="use_the_computer" name="use_the_computer" refinedFrom="//@behaviourPatterns.0/@refinements.1" serviceName="use_the_computer" serviceMethodName="use_the_computer">
+				<contextPrecondition condition="Check_tiredness" operator="lower" explanation="Check_tiredness">
+					<leftPart instanceName="tiredness" propertyName="value"/>
+					<rightPart value="30"/>
+				</contextPrecondition>
+			</refinementTo>
+		</refinements>	
+		
+		<refinements order="4" type="moveevent">
+			<refinementTo xsi:type="pros:SystemTask" ID="go_computer" name="go_computer" refinedFrom="//@behaviourPatterns.0/@refinements.0" serviceName="go_computer" serviceMethodName="go_computer">
+				<contextPrecondition condition="Check_tiredness" operator="lower" explanation="Check_tiredness">
+					<leftPart instanceName="tiredness" propertyName="value"/>
+					<rightPart value="30"/>
+				</contextPrecondition>
+			</refinementTo>
+		</refinements>
+		
+		<refinements order="5" type="BottomEvent">
+			<refinementTo xsi:type="pros:SystemTask" ID="switch_computer_off" name="switch_computer_off" refinedFrom="//@behaviourPatterns.0/@refinements.0" serviceName="switch_computer_off" serviceMethodName="switch_computer_off">
+				<contextPrecondition condition="Check_tiredness" operator="lower" explanation="Check_tiredness">
+					<leftPart instanceName="tiredness" propertyName="value"/>
+					<rightPart value="30"/>
+				</contextPrecondition>
+			</refinementTo>
+		</refinements>
+		
+		
+		<contextSituation condition="Home_Presence">
+			<leftPart instanceName="Home_Presence" propertyName="value"/>
+			<rightPart value="0"/>
+		</contextSituation>
+	</behaviourPatterns>
+</pros:TaskModel>

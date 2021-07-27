@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pros:TaskModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pros="http://org/pros/BehaviourPatternModel.ecore">
+	<behaviourPatterns ID="wash_dishes_BP" name="wash_dishes_BP" enabled="true" 
+		priority="@(unwashed_dishes)*10*(@(c_wd)*2)" interrupt="50">
+	
+		<refinements order="0" type="moveevent">
+			<refinementTo xsi:type="pros:SystemTask" ID="go_kitchen_sink" name="go_kitchen_sink" refinedFrom="//@behaviourPatterns.0/@refinements.0" serviceName="go_kitchen_sink" serviceMethodName="go_kitchen_sink">
+			</refinementTo>
+		</refinements>
+		
+		<refinements order="1" type="BottomEvent">
+			<refinementTo xsi:type="pros:SystemTask" ID="wash_dishes" name="wash_dishes" refinedFrom="//@behaviourPatterns.0/@refinements.1" serviceName="dishes" serviceMethodName="wash_dishes">
+			</refinementTo>
+		</refinements>
+
+		<contextSituation condition="Home_Presence">
+			<leftPart instanceName="Home_Presence" propertyName="value"/>
+			<rightPart value="0"/>
+		</contextSituation>
+	</behaviourPatterns>
+</pros:TaskModel>

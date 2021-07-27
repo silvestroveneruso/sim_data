@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pros:TaskModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pros="http://org/pros/BehaviourPatternModel.ecore">
+	<behaviourPatterns ID="work_BP" name="work_BP" enabled="true" 
+		priority="@(c_worker)*$attime(10,2)*1000*$workingday()" interrupt="2000">
+		
+		<refinements order="0" type="Temporal">
+		  <refinementTo xsi:type="pros:CompositeTask" ID="work0" name="work0" refinedFrom="//@behaviourPatterns.0/@refinements.1">
+			
+			<refinements order="0" type="moveevent">
+				<refinementTo xsi:type="pros:SystemTask" ID="go_computer" name="go_computer" refinedFrom="//@behaviourPatterns.0/@refinements.0" serviceName="go_computer" serviceMethodName="go_computer">
+				<contextPrecondition condition="High Temperature" operator="lower" explanation="High Temperature">
+					<leftPart instanceName="Temp" propertyName="value"/>
+					<rightPart value="10"/>
+				</contextPrecondition>
+				</refinementTo>
+			</refinements>
+			
+			<refinements order="1" type="moveevent">
+				<refinementTo xsi:type="pros:SystemTask" ID="go_wardrobe" name="go_wardrobe" refinedFrom="//@behaviourPatterns.0/@refinements.0" serviceName="go_wardrobe" serviceMethodName="go_wardrobe">
+					<contextPrecondition condition="High Temperature" operator="greater" explanation="High Temperature">
+						<leftPart instanceName="Temp" propertyName="value"/>
+						<rightPart value="10"/>
+					</contextPrecondition>
+				</refinementTo>
+			</refinements>
+			
+			</refinementTo>
+		</refinements>
+			
+				
+		<refinements order="1" type="Temporal">
+		  <refinementTo xsi:type="pros:CompositeTask" ID="work1" name="work1" refinedFrom="//@behaviourPatterns.0/@refinements.1">
+			
+			<refinements order="0" type="BottomEvent">
+				<refinementTo xsi:type="pros:SystemTask" ID="switch_computer_on" name="switch_computer_on" refinedFrom="//@behaviourPatterns.0/@refinements.1" serviceName="switch_computer_on" serviceMethodName="switch_computer_on">
+					<contextPrecondition condition="High Temperature" operator="lower" explanation="High Temperature">
+						<leftPart instanceName="Temp" propertyName="value"/>
+						<rightPart value="10"/>
+					</contextPrecondition>
+				</refinementTo>
+			</refinements>
+			
+			<refinements order="1" type="BottomEvent">
+				<refinementTo xsi:type="pros:SystemTask" ID="change_clothes" name="change_clothes" refinedFrom="//@behaviourPatterns.0/@refinements.1" serviceName="change_clothes" serviceMethodName="change_clothes">
+					<contextPrecondition condition="High Temperature" operator="greater" explanation="High Temperature">
+						<leftPart instanceName="Temp" propertyName="value"/>
+						<rightPart value="10"/>
+					</contextPrecondition>
+				</refinementTo>
+			</refinements>
+				
+		  </refinementTo>
+		</refinements>
+		
+		
+		<refinements order="2" type="Temporal">
+		  <refinementTo xsi:type="pros:CompositeTask" ID="work2" name="work2" refinedFrom="//@behaviourPatterns.0/@refinements.1">				
+		  
+			<refinements order="0" type="moveevent">
+				<refinementTo xsi:type="pros:SystemTask" ID="go_computer_chair" name="go_computer_chair" refinedFrom="//@behaviourPatterns.0/@refinements.1" serviceName="go_computer_chair" serviceMethodName="go_computer_chair">
+					<contextPrecondition condition="High Temperature" operator="lower" explanation="High Temperature">
+						<leftPart instanceName="Temp" propertyName="value"/>
+						<rightPart value="10"/>
+					</contextPrecondition>
+				</refinementTo>
+			</refinements>		
+			
+			<refinements order="1" type="moveevent">
+				<refinementTo xsi:type="pros:SystemTask" ID="go_shoe_shelf" name="go_shoe_shelf" refinedFrom="//@behaviourPatterns.0/@refinements.1" serviceName="go_shoe_shelf" serviceMethodName="go_shoe_shelf">
+					<contextPrecondition condition="High Temperature" operator="greater" explanation="High Temperature">
+						<leftPart instanceName="Temp" propertyName="value"/>
+						<rightPart value="10"/>
+					</contextPrecondition>
+				</refinementTo>
+			</refinements>
+			
+		  </refinementTo>
+		</refinements>
+		
+		
+		<refinements order="3" type="BottomEvent">
+			<refinementTo xsi:type="pros:SystemTask" ID="dress_up_outdoor" name="dress_up_outdoor" refinedFrom="//@behaviourPatterns.0/@refinements.1" serviceName="dress_up_outdoor" serviceMethodName="dress_up_outdoor">
+				<contextPrecondition condition="High Temperature" operator="greater" explanation="High Temperature">
+					<leftPart instanceName="Temp" propertyName="value"/>
+					<rightPart value="10"/>
+				</contextPrecondition>
+			</refinementTo>
+		</refinements>
+		
+		<refinements order="4" type="moveevent">
+			<refinementTo xsi:type="pros:SystemTask" ID="go_workplace" name="go_workplace" refinedFrom="//@behaviourPatterns.0/@refinements.1" serviceName="go_workplace" serviceMethodName="go_workplace">
+				<contextPrecondition condition="High Temperature" operator="greater" explanation="High Temperature">
+					<leftPart instanceName="Temp" propertyName="value"/>
+					<rightPart value="10"/>
+				</contextPrecondition>
+			</refinementTo>
+		</refinements>
+		
+		<refinements order="5" type="BottomEvent">
+			<refinementTo xsi:type="pros:SystemTask" ID="work" name="work" refinedFrom="//@behaviourPatterns.0/@refinements.1" serviceName="work" serviceMethodName="work">
+			</refinementTo>
+		</refinements>
+		
+		
+		
+		<refinements order="6" type="Temporal">
+		  <refinementTo xsi:type="pros:CompositeTask" ID="work6" name="work6" refinedFrom="//@behaviourPatterns.0/@refinements.1">				
+		  
+			<refinements order="0" type="moveevent">
+				<refinementTo xsi:type="pros:SystemTask" ID="go_computer" name="go_computer" refinedFrom="//@behaviourPatterns.0/@refinements.1" serviceName="go_computer" serviceMethodName="go_computer">
+					<contextPrecondition condition="High Temperature" operator="lower" explanation="High Temperature">
+						<leftPart instanceName="Temp" propertyName="value"/>
+						<rightPart value="10"/>
+					</contextPrecondition>
+				</refinementTo>
+			</refinements>		
+			
+			<refinements order="1" type="moveevent">
+				<refinementTo xsi:type="pros:SystemTask" ID="go_shoe_shelf" name="go_shoe_shelf" refinedFrom="//@behaviourPatterns.0/@refinements.1" serviceName="go_shoe_shelf" serviceMethodName="go_shoe_shelf">
+					<contextPrecondition condition="High Temperature" operator="greater" explanation="High Temperature">
+						<leftPart instanceName="Temp" propertyName="value"/>
+						<rightPart value="10"/>
+					</contextPrecondition>
+				</refinementTo>
+			</refinements>
+			
+		  </refinementTo>
+		</refinements>
+		
+		
+		<refinements order="7" type="Temporal">
+		  <refinementTo xsi:type="pros:CompositeTask" ID="work7" name="work7" refinedFrom="//@behaviourPatterns.0/@refinements.1">				
+		  
+			<refinements order="0" type="BottomEvent">
+				<refinementTo xsi:type="pros:SystemTask" ID="switch_computer_off" name="switch_computer_off" refinedFrom="//@behaviourPatterns.0/@refinements.1" serviceName="switch_computer_off" serviceMethodName="switch_computer_off">
+					<contextPrecondition condition="High Temperature" operator="lower" explanation="High Temperature">
+						<leftPart instanceName="Temp" propertyName="value"/>
+						<rightPart value="10"/>
+					</contextPrecondition>
+				</refinementTo>
+			</refinements>		
+			
+			<refinements order="1" type="BottomEvent">
+				<refinementTo xsi:type="pros:SystemTask" ID="dress_down_outdoor" name="dress_down_outdoor" refinedFrom="//@behaviourPatterns.0/@refinements.1" serviceName="dress_down_outdoor" serviceMethodName="dress_down_outdoor">
+					<contextPrecondition condition="High Temperature" operator="greater" explanation="High Temperature">
+						<leftPart instanceName="Temp" propertyName="value"/>
+						<rightPart value="10"/>
+					</contextPrecondition>
+				</refinementTo>
+			</refinements>
+			
+		  </refinementTo>
+		</refinements>
+		
+		
+		<refinements order="8" type="moveevent">
+			<refinementTo xsi:type="pros:SystemTask" ID="go_wardrobe" name="go_wardrobe" refinedFrom="//@behaviourPatterns.0/@refinements.8" serviceName="go_wardrobe" serviceMethodName="go_wardrobe">
+			<contextPrecondition condition="High Temperature" operator="greater" explanation="High Temperature">
+				<leftPart instanceName="Temp" propertyName="value"/>
+				<rightPart value="10"/>
+			</contextPrecondition>
+			</refinementTo>
+		</refinements>
+		
+		<refinements order="9" type="BottomEvent">
+			<refinementTo xsi:type="pros:SystemTask" ID="change_clothes" name="change_clothes" refinedFrom="//@behaviourPatterns.0/@refinements.9" serviceName="clothes" serviceMethodName="change_clothes">
+			<contextPrecondition condition="High Temperature" operator="greater" explanation="High Temperature">
+				<leftPart instanceName="Temp" propertyName="value"/>
+				<rightPart value="10"/>
+			</contextPrecondition>
+			</refinementTo>
+		</refinements>
+		
+		<refinements order="10" type="BottomEvent">
+			<refinementTo xsi:type="pros:SystemTask" ID="finish_walk" name="finish_walk" refinedFrom="//@behaviourPatterns.0/@refinements.10" serviceName="finish_walk" serviceMethodName="finish_walk">
+			<contextPrecondition condition="High Temperature" operator="greater" explanation="High Temperature">
+				<leftPart instanceName="Temp" propertyName="value"/>
+				<rightPart value="10"/>
+			</contextPrecondition>
+			</refinementTo>
+		</refinements>
+		
+
+		<contextSituation condition="WorkingDay">
+			<leftPart instanceName="WorkingDay" propertyName="value"/>
+			<rightPart value="true"/>
+		</contextSituation>
+	</behaviourPatterns>
+</pros:TaskModel>

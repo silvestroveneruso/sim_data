@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pros:TaskModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pros="http://org/pros/BehaviourPatternModel.ecore">
+	<behaviourPatterns ID="enter_home_BP" name="enter_home_BP" enabled="false" 
+		priority="20" interrupt="0">
+	
+		<refinements order="0" type="moveevent">
+			<refinementTo xsi:type="pros:SystemTask" ID="go_entrace" name="go_entrace" refinedFrom="//@behaviourPatterns.0/@refinements.0" serviceName="go_entrace" serviceMethodName="go_entrace">
+			</refinementTo>
+		</refinements>
+		
+		<refinements order="1" type="moveevent">
+			<refinementTo xsi:type="pros:SystemTask" ID="go_shoe_shelf" name="go_shoe_shelf" refinedFrom="//@behaviourPatterns.0/@refinements.1" serviceName="go_shoe_shelf" serviceMethodName="go_shoe_shelf">
+			</refinementTo>
+		</refinements>
+		
+		<refinements order="2" type="BottomEvent">
+			<refinementTo xsi:type="pros:SystemTask" ID="dress_down_outdoor" name="dress_down_outdoor" refinedFrom="//@behaviourPatterns.0/@refinements.2" serviceName="dress_down_outdoor" serviceMethodName="dress_down_outdoor">
+			</refinementTo>
+		</refinements>
+		
+		<refinements order="3" type="moveevent">
+			<refinementTo xsi:type="pros:SystemTask" ID="go_wardrobe" name="go_wardrobe" refinedFrom="//@behaviourPatterns.0/@refinements.3" serviceName="go_wardrobe" serviceMethodName="go_wardrobe">
+			</refinementTo>
+		</refinements>
+		
+		<refinements order="4" type="BottomEvent">
+			<refinementTo xsi:type="pros:SystemTask" ID="change_clothes" name="change_clothes" refinedFrom="//@behaviourPatterns.0/@refinements.9" serviceName="clothes" serviceMethodName="change_clothes">
+			</refinementTo>
+		</refinements>
+
+		<contextSituation condition="Home_Presence">
+			<leftPart instanceName="Home_Presence" propertyName="value"/>
+			<rightPart value="1"/>
+		</contextSituation>
+	</behaviourPatterns>
+</pros:TaskModel>

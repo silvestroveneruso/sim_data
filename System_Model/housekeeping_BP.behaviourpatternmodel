@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pros:TaskModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pros="http://org/pros/BehaviourPatternModel.ecore">
+	<behaviourPatterns ID="housekeeping_BP" name="housekeeping_BP" enabled="true" 
+		priority="30" interrupt="50">
+		
+		
+		
+		<refinements order="0" type="Temporal">
+		  <refinementTo xsi:type="pros:CompositeTask" ID="housekeeping0" name="housekeeping0" refinedFrom="//@behaviourPatterns.0/@refinements.1">
+			
+			<refinements order="0" type="moveevent">
+				<refinementTo xsi:type="pros:SystemTask" ID="go_computer" name="go_computer" refinedFrom="//@behaviourPatterns.0/@refinements.0" serviceName="go_computer" serviceMethodName="go_computer">
+				<contextPrecondition condition="High Temperature" operator="lower" explanation="High Temperature">
+					<leftPart instanceName="Temp" propertyName="value"/>
+					<rightPart value="20"/>
+				</contextPrecondition>
+				</refinementTo>
+			</refinements>
+			
+			<refinements order="1" type="moveevent">
+				<refinementTo xsi:type="pros:SystemTask" ID="go_exercise_place" name="go_exercise_place" refinedFrom="//@behaviourPatterns.0/@refinements.0" serviceName="go_exercise_place" serviceMethodName="go_exercise_place">
+					<contextPrecondition condition="High Temperature" operator="greater" explanation="High Temperature">
+						<leftPart instanceName="Temp" propertyName="value"/>
+						<rightPart value="20"/>
+					</contextPrecondition>
+				</refinementTo>
+			</refinements>
+			
+			</refinementTo>
+		</refinements>
+		
+		
+		<refinements order="1" type="Temporal">
+		  <refinementTo xsi:type="pros:CompositeTask" ID="housekeeping1" name="housekeeping1" refinedFrom="//@behaviourPatterns.0/@refinements.1">
+			
+			<refinements order="0" type="BottomEvent">
+				<refinementTo xsi:type="pros:SystemTask" ID="clean" name="clean" refinedFrom="//@behaviourPatterns.0/@refinements.0" serviceName="clean" serviceMethodName="clean">
+				<contextPrecondition condition="High Temperature" operator="lower" explanation="High Temperature">
+					<leftPart instanceName="Temp" propertyName="value"/>
+					<rightPart value="20"/>
+				</contextPrecondition>
+				</refinementTo>
+			</refinements>
+			
+			<refinements order="1" type="BottomEvent">
+				<refinementTo xsi:type="pros:SystemTask" ID="clean_with_water" name="clean_with_water" refinedFrom="//@behaviourPatterns.0/@refinements.0" serviceName="clean_with_water" serviceMethodName="clean_with_water">
+					<contextPrecondition condition="High Temperature" operator="greater" explanation="High Temperature">
+						<leftPart instanceName="Temp" propertyName="value"/>
+						<rightPart value="20"/>
+					</contextPrecondition>
+				</refinementTo>
+			</refinements>
+			
+			</refinementTo>
+		</refinements>
+		
+		
+		<refinements order="2" type="Temporal">
+		  <refinementTo xsi:type="pros:CompositeTask" ID="housekeeping2" name="housekeeping2" refinedFrom="//@behaviourPatterns.0/@refinements.1">
+			
+			<refinements order="0" type="moveevent">
+				<refinementTo xsi:type="pros:SystemTask" ID="go_book_shelf" name="go_book_shelf" refinedFrom="//@behaviourPatterns.0/@refinements.0" serviceName="go_book_shelf" serviceMethodName="go_book_shelf">
+				<contextPrecondition condition="High Temperature" operator="lower" explanation="High Temperature">
+					<leftPart instanceName="Temp" propertyName="value"/>
+					<rightPart value="20"/>
+				</contextPrecondition>
+				</refinementTo>
+			</refinements>
+			
+			<refinements order="1" type="moveevent">
+				<refinementTo xsi:type="pros:SystemTask" ID="go_kitchen_sink" name="go_kitchen_sink" refinedFrom="//@behaviourPatterns.0/@refinements.0" serviceName="go_kitchen_sink" serviceMethodName="go_kitchen_sink">
+					<contextPrecondition condition="High Temperature" operator="greater" explanation="High Temperature">
+						<leftPart instanceName="Temp" propertyName="value"/>
+						<rightPart value="20"/>
+					</contextPrecondition>
+				</refinementTo>
+			</refinements>
+			
+			</refinementTo>
+		</refinements>
+		
+		
+		<refinements order="3" type="Temporal">
+		  <refinementTo xsi:type="pros:CompositeTask" ID="housekeeping3" name="housekeeping3" refinedFrom="//@behaviourPatterns.0/@refinements.1">
+			
+			<refinements order="0" type="BottomEvent">
+				<refinementTo xsi:type="pros:SystemTask" ID="clean" name="clean" refinedFrom="//@behaviourPatterns.0/@refinements.0" serviceName="clean" serviceMethodName="clean">
+				<contextPrecondition condition="High Temperature" operator="lower" explanation="High Temperature">
+					<leftPart instanceName="Temp" propertyName="value"/>
+					<rightPart value="20"/>
+				</contextPrecondition>
+				</refinementTo>
+			</refinements>
+			
+			<refinements order="1" type="BottomEvent">
+				<refinementTo xsi:type="pros:SystemTask" ID="clean_with_water" name="clean_with_water" refinedFrom="//@behaviourPatterns.0/@refinements.0" serviceName="clean_with_water" serviceMethodName="clean_with_water">
+					<contextPrecondition condition="High Temperature" operator="greater" explanation="High Temperature">
+						<leftPart instanceName="Temp" propertyName="value"/>
+						<rightPart value="20"/>
+					</contextPrecondition>
+				</refinementTo>
+			</refinements>
+			
+			</refinementTo>
+		</refinements>
+		
+
+		<refinements order="4" type="moveevent">
+			<refinementTo xsi:type="pros:SystemTask" ID="go_wardrobe" name="go_wardrobe" refinedFrom="//@behaviourPatterns.0/@refinements.4" serviceName="go_wardrobe" serviceMethodName="go_wardrobe">
+			<contextPrecondition condition="High Temperature" operator="lower" explanation="High Temperature">
+				<leftPart instanceName="Temp" propertyName="value"/>
+				<rightPart value="20"/>
+			</contextPrecondition>
+			</refinementTo>
+		</refinements>
+		
+		<refinements order="5" type="BottomEvent">
+			<refinementTo xsi:type="pros:SystemTask" ID="clean" name="clean" refinedFrom="//@behaviourPatterns.0/@refinements.5" serviceName="clean" serviceMethodName="clean">
+			<contextPrecondition condition="High Temperature" operator="lower" explanation="High Temperature">
+				<leftPart instanceName="Temp" propertyName="value"/>
+				<rightPart value="20"/>
+			</contextPrecondition>
+			</refinementTo>
+		</refinements>
+
+		<contextSituation condition="Home_Presence">
+			<leftPart instanceName="Home_Presence" propertyName="value"/>
+			<rightPart value="0"/>
+		</contextSituation>
+	</behaviourPatterns>
+</pros:TaskModel>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pros:TaskModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pros="http://org/pros/BehaviourPatternModel.ecore">
+	<behaviourPatterns ID="sleeping_BP" name="sleeping_BP" enabled="true" 
+		priority="$min($attime(0,2)*100+@(tiredness)-100,100)+1" interrupt="200-$attime(0,2)*100">
+	
+		<refinements order="0" type="moveevent">
+			<refinementTo xsi:type="pros:SystemTask" ID="go_wardrobe" name="go_wardrobe" refinedFrom="//@behaviourPatterns.0/@refinements.0" serviceName="go_wardrobe" serviceMethodName="go_wardrobe">
+			</refinementTo>
+		</refinements>
+		
+		
+		<refinements order="1" type="Temporal">
+		  <refinementTo xsi:type="pros:CompositeTask" ID="sleeping1" name="sleeping1" refinedFrom="//@behaviourPatterns.0/@refinements.1">
+			
+			<refinements order="0" type="BottomEvent">
+				<refinementTo xsi:type="pros:SystemTask" ID="get_clothes" name="get_clothes" refinedFrom="//@behaviourPatterns.0/@refinements.0" serviceName="get_clothes" serviceMethodName="get_clothes">
+				<contextPrecondition condition="Check_tiredness" operator="lower" explanation="Check_tiredness">
+					<leftPart instanceName="tiredness" propertyName="value"/>
+					<rightPart value="50"/>
+				</contextPrecondition>
+				</refinementTo>
+			</refinements>
+			
+			<refinements order="1" type="BottomEvent">
+				<refinementTo xsi:type="pros:SystemTask" ID="change_clothes" name="change_clothes" refinedFrom="//@behaviourPatterns.0/@refinements.0" serviceName="change_clothes" serviceMethodName="change_clothes">
+					<contextPrecondition condition="Check_tiredness" operator="greater" explanation="Check_tiredness">
+						<leftPart instanceName="tiredness" propertyName="value"/>
+						<rightPart value="50"/>
+					</contextPrecondition>
+				</refinementTo>
+			</refinements>
+			
+			</refinementTo>
+		</refinements>
+		
+		
+		<refinements order="2" type="moveevent">
+			<refinementTo xsi:type="pros:SystemTask" ID="go_bathtub" name="go_bathtub" refinedFrom="//@behaviourPatterns.0/@refinements.2" serviceName="go_bathtub" serviceMethodName="go_bathtub">
+				<contextPrecondition condition="Check_tiredness" operator="lower" explanation="Check_tiredness">
+					<leftPart instanceName="tiredness" propertyName="value"/>
+					<rightPart value="50"/>
+				</contextPrecondition>
+			</refinementTo>
+		</refinements>
+		
+		<refinements order="3" type="BottomEvent">
+			<refinementTo xsi:type="pros:SystemTask" ID="have_bath" name="have_bath" refinedFrom="//@behaviourPatterns.0/@refinements.3" serviceName="have_bath" serviceMethodName="have_bath">
+				<contextPrecondition condition="Check_tiredness" operator="lower" explanation="Check_tiredness">
+					<leftPart instanceName="tiredness" propertyName="value"/>
+					<rightPart value="50"/>
+				</contextPrecondition>
+			</refinementTo>
+		</refinements>
+		
+		<refinements order="4" type="moveevent">
+			<refinementTo xsi:type="pros:SystemTask" ID="go_bathroom_sink" name="go_bathroom_sink" refinedFrom="//@behaviourPatterns.0/@refinements.4" serviceName="go_bathroom_sink" serviceMethodName="go_bathroom_sink">
+				<contextPrecondition condition="Check_tiredness" operator="lower" explanation="Check_tiredness">
+					<leftPart instanceName="tiredness" propertyName="value"/>
+					<rightPart value="50"/>
+				</contextPrecondition>
+			</refinementTo>
+		</refinements>
+		
+		<refinements order="5" type="BottomEvent">
+			<refinementTo xsi:type="pros:SystemTask" ID="brush_teeth" name="brush_teeth" refinedFrom="//@behaviourPatterns.0/@refinements.5" serviceName="brush_teeth" serviceMethodName="brush_teeth">
+				<contextPrecondition condition="Check_tiredness" operator="lower" explanation="Check_tiredness">
+					<leftPart instanceName="tiredness" propertyName="value"/>
+					<rightPart value="50"/>
+				</contextPrecondition>
+			</refinementTo>
+		</refinements>
+		
+		
+		<refinements order="6" type="moveevent">
+			<refinementTo xsi:type="pros:SystemTask" ID="go_bed" name="go_bed" refinedFrom="//@behaviourPatterns.0/@refinements.6" serviceName="go_bed" serviceMethodName="go_bed">
+			</refinementTo>
+		</refinements>
+		
+		<refinements order="7" type="BottomEvent">
+			<refinementTo xsi:type="pros:SystemTask" ID="sleep_in_bed" name="sleep_in_bed" refinedFrom="//@behaviourPatterns.0/@refinements.7" serviceName="sleep_in_bed" serviceMethodName="sleep_in_bed">
+			</refinementTo>
+		</refinements>
+		
+		<refinements order="8" type="moveevent">
+			<refinementTo xsi:type="pros:SystemTask" ID="go_wardrobe" name="go_wardrobe" refinedFrom="//@behaviourPatterns.0/@refinements.8" serviceName="go_wardrobe" serviceMethodName="go_wardrobe">
+			</refinementTo>
+		</refinements>
+		
+		<refinements order="9" type="BottomEvent">
+			<refinementTo xsi:type="pros:SystemTask" ID="change_clothes" name="change_clothes" refinedFrom="//@behaviourPatterns.0/@refinements.9" serviceName="clothes" serviceMethodName="change_clothes">
+			</refinementTo>
+		</refinements>
+		
+		
+		<contextSituation condition="Home_Presence">
+			<leftPart instanceName="Home_Presence" propertyName="value"/>
+			<rightPart value="0"/>
+		</contextSituation>
+	</behaviourPatterns>
+</pros:TaskModel>

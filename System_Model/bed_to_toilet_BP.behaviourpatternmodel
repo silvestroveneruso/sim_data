@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pros:TaskModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pros="http://org/pros/BehaviourPatternModel.ecore">
+	<behaviourPatterns ID="bed_to_toilet_BP" name="bed_to_toilet_BP" enabled="true" 
+		priority="@(wc_need)*(0.5+@(c_wc))" interrupt="1000">
+	
+	
+		<refinements order="0" type="moveevent">
+			<refinementTo xsi:type="pros:SystemTask" ID="go_wc" name="go_wc" refinedFrom="//@behaviourPatterns.0/@refinements.0" serviceName="go_wc" serviceMethodName="go_wc">
+			</refinementTo>
+		</refinements>
+		
+		<refinements order="1" type="BottomEvent">
+			<refinementTo xsi:type="pros:SystemTask" ID="wc_do" name="wc_do" refinedFrom="//@behaviourPatterns.0/@refinements.1" serviceName="wc_do" serviceMethodName="wc_do">
+			</refinementTo>
+		</refinements>
+		
+		<refinements order="2" type="BottomEvent">
+			<refinementTo xsi:type="pros:SystemTask" ID="wc_flush" name="wc_flush" refinedFrom="//@behaviourPatterns.0/@refinements.2" serviceName="wc_flush" serviceMethodName="wc_flush">
+			</refinementTo>
+		</refinements>
+	
+		<refinements order="3" type="moveevent">
+			<refinementTo xsi:type="pros:SystemTask" ID="go_bathroom_sink" name="go_bathroom_sink" refinedFrom="//@behaviourPatterns.0/@refinements.3" serviceName="go_bathroom_sink" serviceMethodName="go_bathroom_sink">
+			</refinementTo>
+		</refinements>
+		
+		<refinements order="4" type="BottomEvent">
+			<refinementTo xsi:type="pros:SystemTask" ID="wash_hands" name="wash_hands" refinedFrom="//@behaviourPatterns.0/@refinements.4" serviceName="wash_hands" serviceMethodName="wash_hands">
+			</refinementTo>
+		</refinements>
+		
+		
+		<contextSituation condition="sleeping">
+			<leftPart instanceName="sleeping" propertyName="value"/>
+			<rightPart value="1"/>
+		</contextSituation>
+	</behaviourPatterns>
+</pros:TaskModel>
