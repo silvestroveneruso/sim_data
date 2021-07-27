@@ -1,6 +1,6 @@
 # A Model-Based Simulation Tool for Smart Homes
 
-Link to download the three project tools:
+Link to download the project tools:
 https://drive.google.com/file/d/1hMDeY8y_AGmyXg7wsQuyrdM_zOkDw0VK/view?usp=sharing
 
 Inside the google drive folder you will find three tools:
