@@ -4,8 +4,8 @@ Link to download the project tools:
 https://drive.google.com/file/d/1hMDeY8y_AGmyXg7wsQuyrdM_zOkDw0VK/view?usp=sharing
 
 Inside the google drive folder you will find three tools:
-- *Simulator_v1.0*, the main tool which allows to start a simulation in the context of smart homes;
-- *HomeDesigner_v1.0*, the tool to design the smart home filled with sensors;
+- *Simulator_v1.0*, the main tool to start a simulation run in the context of a smart home;
+- *HomeDesigner_v1.0*, the tool to design the smart environment filled with sensors used within the simulation;
 - *HumanDesigner_v1.0*, the tool to create human profiles which characterize the inhabitant(s) within the simulation.
 
 After downloading them, to run each tool, double-click on the corresponding executable (*.exe* files).
