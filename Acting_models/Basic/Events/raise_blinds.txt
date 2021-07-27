@@ -1,0 +1,11 @@
+raise_blinds BottomEvent
+
+PlusInterrupt 0
+
+Duration 10
+DurationDeviation 0
+
+MoveNoise 10
+
+Results
+blinds @(blinds)+$atend()*1

@@ -1,0 +1,10 @@
+clean BottomEvent
+
+PlusInterrupt 0
+
+Duration 20*60
+DurationDeviation 2*60
+
+MoveNoise 30
+
+Results

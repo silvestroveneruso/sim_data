@@ -1,0 +1,8 @@
+air_Condition SensorEvent
+
+condition Temp>18
+
+
+Results
+Temp  @(Temp)+$atstart()*(-1)/30+$atend()*(+1)/30+@(step)*(0)
+air_Condition  1

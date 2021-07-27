@@ -1,0 +1,21 @@
+pressure_bed 0
+power_use 50 ;default
+water_use 0
+
+
+unwashed_dishes 0
+food 100
+cooked_food 0 ;count
+
+
+
+fridge_door_contact 1
+
+freq_post 1000000 
+
+air_Condition 0
+
+Home_Aired 1
+Home_Presence 0
+blinds 0
+windows 0

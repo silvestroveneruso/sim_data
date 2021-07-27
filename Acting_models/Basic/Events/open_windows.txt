@@ -1,0 +1,11 @@
+open_windows BottomEvent
+
+PlusInterrupt 0
+
+Duration 3
+DurationDeviation 0
+
+MoveNoise 10
+
+Results
+windows @(windows)+$atend()*1

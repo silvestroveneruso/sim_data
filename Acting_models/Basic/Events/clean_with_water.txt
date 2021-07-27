@@ -1,0 +1,11 @@
+clean_with_water BottomEvent
+
+PlusInterrupt 0
+
+Duration 20*60
+DurationDeviation 2*60
+
+MoveNoise 30
+
+Results
+water_use @(water_use)+$atstart()*(+3)+$atend()*(-3)+@(step)*(0)
