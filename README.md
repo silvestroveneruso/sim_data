@@ -22,11 +22,11 @@ Models from these folders can be integrated within the simulation by adding them
 
 # Tool Description
 
+Notice that the term *user* is used throughout the entire paper to denote the researcher who uses the tool, whereas the term *inhabitant* is used to denote the virtual avatar simulating a person's behaviour.
+
 Once the user starts the *Simulator_v1.0* tool, the following interface is shown:
 
 ![alt text](https://github.com/silvestroveneruso/smart_space_model_based_simulation/blob/main/figures/sim_screenshot_01.png)
-
-Notice that the term \emph{user} is used throughout the entire paper to denote the researcher who uses the tool, whereas the term \emph{inhabitant} is used to denote the virtual avatar simulating a person's behaviour.
 
 On the left side, organized in two columns, there are all the available settings to customize a simulation run. From the left column, starting from the top, we have:
 * **Simulation length**. It determines how many *days* the simulation will last. Therefore, how many days the resulting dataset will cover.
