@@ -18,7 +18,7 @@ The following repository contains models for the *Simulator_v1.0* tool. In parti
 - *Acting_models*, containing models describing main-events/activities which follow the original language of the simulator;
 - *System_Model*, containing models describing main-events/activities which follow the task-model language.
 
-Models from these folders can be integrated within the simulation by adding them to the corresponding folders inside the *Data* folder already present within the *Simulator_v1.0* tool.
+Models from these folders can be integrated within the simulation by adding them to the corresponding folders inside the *Data* folder already present within the downloadable tools.
 
 # Tool Description
 
