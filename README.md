@@ -17,9 +17,9 @@ The repository does not only include the executables needed to run the tools, bu
 The following repository contains the following folders:
 - *Acting_models*, containing models describing main-events/activities which follow the original language of the simulator;
 - *System_Model*, containing models describing main-events/activities which follow the task-model language.
-- *House_models*, containing models describing the smart environment in which the inhabitant interacts. New models can be defined by using the *HomeDesigner_v1.0* tool.
-- *Human_models*, containing models describing human profile for the inhabitant(s) within the simulation. New models can be defined by using the *HumanDesigner_v1.0* tool.
-- *SensorTAB*, containing txt files representing custom sensors devfined by using the *HomeDesigner_v1.0* tool.
+- *House_models*, containing models defining walls and sensors for the smart space in which the inhabitant(s) interact(s). New models can be defined by using the *HomeDesigner_v1.0* tool.
+- *Human_models*, containing models defining human profiles for the inhabitant(s) within the simulation. New models can be defined by using the *HumanDesigner_v1.0* tool.
+- *SensorTAB*, containing txt files representing values over the simulation time of custom sensors previously defined by using the *HomeDesigner_v1.0* tool.
 
 Models from these folders can be integrated within the simulation by adding them to the corresponding folders inside the *Data* folder already present within the downloadable tools.
 
